@@ -4,9 +4,11 @@
     { "id": 2, "title": "Post 2" },
     { "id": 3, "title": "Post 3" }
   ],
-  "comments": [
-    { "id": 1, "body": "Hi we are Testing our first Api", "postId": 1 },
-    { "id": 2, "body": "Next level automation", "postId": 1 }
+  "Students": [
+    { "studentid": 1, "name": "Pradeep Yadav", "postId": 1 , "socre": 72},
+    { "studentid": 2, "name": "Tushar Jain", "postId": 1 , "socre": 82},
+    { "studentid": 3, "name": "Shivam sharma", "postId": 1 , "socre": 92 },
+    { "studentid": 4, "name": "Blank", "postId": 1 , "socre": 0 }
   ],
   "profile": {
     "name": "Ankush kumar"
