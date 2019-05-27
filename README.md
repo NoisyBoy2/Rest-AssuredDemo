@@ -1,2 +1,3 @@
 # Rest-AssuredDemo
-Demo using RestAssured library 
+Demo using RestAssured library with BDD cucumber
+
