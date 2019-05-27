@@ -1,5 +1,4 @@
 package com.test.stepdefs;
-import java.util.Map;
 import org.json.JSONObject;
 import org.junit.Assert;
 
@@ -19,7 +18,7 @@ public class restAssuredGlueCode {
 	
 	@Given("user will post the resuest as")
 	public void user_will_post_the_resuest_as(io.cucumber.datatable.DataTable dataTable) {
-	    RestAssured.baseURI ="https://jsonblob.com/api";
+	     RestAssured.baseURI ="https://jsonblob.com/api";
 		 RequestSpecification request = RestAssured.given();
 		 
 		 
@@ -55,10 +54,6 @@ public class restAssuredGlueCode {
 		  ResponseBody = response.body().asString();
 	}
 	
-	@Then("user will verify the profile details of the user been updated to {string}")
-	public void user_will_verify_the_profile_details_of_the_user_been_updated_to(String string) {
-		Assert.assertTrue(ResponseBody.contains(string));
-	}
 	@Given("user will delete the blobid that has been added")
 	public void user_will_delete_the_blobid_that_has_been_added() {
 		RestAssured.baseURI = "https://jsonblob.com/api/jsonBlob";
@@ -67,6 +62,12 @@ public class restAssuredGlueCode {
 	    statusCode = response.getStatusCode();
 	    
 	}
+	
+	@Then("user will verify the profile details of the user been updated to {string}")
+	public void user_will_verify_the_profile_details_of_the_user_been_updated_to(String string) {
+		Assert.assertTrue(ResponseBody.contains(string));
+	}
+	
 	@Then("verify user profile has been deleted")
 	public void verify_user_profile_has_been_deleted() {
 		RestAssured.baseURI ="https://jsonblob.com/api/jsonBlob";
@@ -91,22 +92,16 @@ public class restAssuredGlueCode {
 		Assert.assertEquals("The profile name doesn't matched", profileName, userName);
 	}
 	
+	@Then("user will verify the response code as {string}")
+	public void user_will_verify_the_response_code_as(String responseCode) {
+		System.out.println("Response Code is =>  " + statusCode);
+		Assert.assertEquals(statusCode.toString(), responseCode);
+	}
 	
-
-
-
-
-
-@Then("user will verify the response code as {string}")
-public void user_will_verify_the_response_code_as(String responseCode) {
-	System.out.println("Response Code is =>  " + statusCode);
-	Assert.assertEquals(statusCode.toString(), responseCode);
-}
-
-@Then("Content type as {string}")
-public void content_type_as(String string) {
-	System.out.println("Response Code is =>  " + statusCode);
-	Assert.assertEquals(contentType.toString(), string);
-}
-
+	@Then("Content type as {string}")
+	public void content_type_as(String string) {
+		System.out.println("Content Type is =>  " + contentType.toString());
+		Assert.assertEquals(contentType.toString(), string);
+	}
+	
 }

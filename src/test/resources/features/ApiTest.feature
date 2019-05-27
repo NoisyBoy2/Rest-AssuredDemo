@@ -1,4 +1,4 @@
-@test
+@Feature1
 Feature: Demo for Rest assured Library 
 
 @Post
